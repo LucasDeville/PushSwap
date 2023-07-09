@@ -6,13 +6,13 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:32:29 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/07 14:54:13 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/09 15:43:54 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
-
-/*void    ft_is_closer(int a, int b, int value, t_infos *infos)
+//                                  BEST
+/*void    ft_is_closer(int try, t_infos *infos, int index)
 {
     if (ft_abs())
         return (1);    
@@ -22,14 +22,21 @@
 void    ft_next_pb(t_lists **lists, t_infos *infos)
 {
     t_lists *tmp;
+    int     i;
 
-
+    i = 0;
+    tmp = lists[0];
+    if (!infos.best)
+    {
+        infos.best == tmp;
+        tmp = tmp->next;
+    }
     while (tmp)
     {
-        if (ft_is_closer(algo, tmp->nb))
-        {
-
-        }
+        if (ft_is_closer(infos.best->nb, tmp->nb, i))
+            infos.best = tmp;
+        tmp = tmp->next;
+        i++;
     }
     ft_push_this(lists, infos);
 }*/

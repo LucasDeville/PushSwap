@@ -6,18 +6,18 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:15:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/06 14:38:55 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:11:05 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
 
-int	ft_check(char **argv)
+int	ft_check(char **argv, int min)
 {
 	int	i;
 	int	x;
 
-	i = 1;
+	i = min;
 	x = 0;
 	while (argv[i])
 	{
@@ -31,7 +31,7 @@ int	ft_check(char **argv)
 		i++;
 	}
 
-	if (ft_check_duplicate(argv) != 0)
+	if (ft_check_duplicate(argv) != 0 || ft_check_max(argv, min) != 0)
 		return(-1);
 	return (0);
 }
@@ -42,13 +42,13 @@ int	ft_error(void)
 	return (-1);
 }
 
-t_lists *ft_create_chain(int nb, char **str)
+t_lists *ft_create_chain(int nb, char **str, int min)
 {
 	t_lists	*a;
 	t_lists	*tmp;
 
 	tmp = NULL;
-	while (nb >= 1)
+	while (nb >= min)
 	{
 		a = malloc(sizeof(t_lists));
 		a->nb = atoi(str[nb--]);
@@ -61,13 +61,19 @@ t_lists *ft_create_chain(int nb, char **str)
 int	main(int argc, char **argv)
 {
 	t_lists	**lists;
-
-	if (argc < 3)
+	
+	if (argc < 2)
 		return (0);
-	if (ft_check(argv) != 0)
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');	
+	if ((argc == 2 && ft_check(argv, 0) != 0)
+		|| (argc > 2 && ft_check(argv, 1) != 0))
 		return (ft_error());
 	lists = ft_calloc(sizeof(t_lists *), 3);
-	lists[0] = ft_create_chain(argc - 1, argv);
+	if (argc == 2)
+		lists[0] = ft_create_chain(ft_argv_size(argv) - 1, argv, 0);
+	else
+		lists[0] = ft_create_chain(argc - 1, argv, 1);
 	
 	//------------------------------------------------//
 	t_lists *tmp;
@@ -89,7 +95,7 @@ int	main(int argc, char **argv)
 	ft_pa(lists);
 	ft_pa(lists);
 */
-	ft_algo((argc - 1), lists);
+	//ft_algo((argc - 1), lists);
 	//ft_printf("%i", ft_max(lists));
 	//------------//
 	printf("\n");
@@ -109,7 +115,8 @@ int	main(int argc, char **argv)
 	}
 	//------------------------------------------------//
 
-
+	if (argc == 2)
+		ft_free_argv(argv);
 	ft_free_lists(lists);
 	return (0);
 }

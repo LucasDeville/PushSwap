@@ -6,12 +6,15 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:37:42 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/07 14:05:10 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:11:59 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PUSHSWAP_H
 # define FT_PUSHSWAP_H
+
+#define INT_MIN "-2147483648" 
+#define INT_MAX "2147483647"
 
 #define FT_RA   0
 #define FT_RB   1
@@ -49,6 +52,9 @@ void    ft_sort_3(t_lists **lists);
 int ft_is_sorted(t_lists *lists);
 void    ft_sort(t_lists **lists);
 int ft_size(t_lists *lists);
+void    ft_free_argv(char **argv);
+int ft_argv_size(char **str);
+int ft_check_max(char **str, int min);
 
 void    ft_sa(t_lists **lists);
 void    ft_sb(t_lists **lists);
