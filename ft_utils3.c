@@ -6,18 +6,21 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:42:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/09 16:29:32 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/27 17:51:23 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
 
-/*void    ft_init_infos(t_infos **infos)
+void    ft_get_elt_at(t_list *list, int i)
 {
-    infos.index = 0;
-    infos.best = NULL;
-    infos.size = size;
-}*/
+    t_lists *tmp;
+
+    tmp = list;
+    while (--i)
+        tmp->next;
+    return (tmp);
+}
 
 int ft_check_max(char **str, int min)
 {

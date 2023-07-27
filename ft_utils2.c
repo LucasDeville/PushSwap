@@ -6,34 +6,39 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:55:48 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/09 15:43:11 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/27 19:02:36 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
 
-/*int ft_closer(int best, int try, int min, int max)
+int ft_max_idx(int a, int b)
 {
-    if ()
+    if (a > b)
+        return (a);
+    return (b);
+}
 
-    return (0);
-}*/
+int ft_get_idx(t_lists *lists, t_lists *elt)
+{
+    t_lists *tmp;
+    int i;
+
+    i = 0;
+    tmp = lists;
+    while (tmp->nb != elt->nb)
+    {
+        tmp = tmp->next;
+        i++;
+    }
+    return (i);
+}
 
 int ft_abs(int a)
 {
     if (a < 0)
         a *= -1;
     return (a);
-}   
-
-int ft_move_needed(int index, int size)
-{
-    int moves;
-
-    moves = ft_abs(index - (size / 2));
-    if (moves < 0)
-        moves *= -1;
-    return (moves);
 }
 
 int ft_size(t_lists *lists)
