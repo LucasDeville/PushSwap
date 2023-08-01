@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 13:55:48 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/27 19:02:36 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/31 11:52:56 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int ft_get_idx(t_lists *lists, t_lists *elt)
 
     i = 0;
     tmp = lists;
-    while (tmp->nb != elt->nb)
+    
+    while (tmp->nb && tmp->nb != elt->nb)
     {
+        
         tmp = tmp->next;
         i++;
     }

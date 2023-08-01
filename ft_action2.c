@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:50:11 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/04 15:32:35 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/31 14:07:45 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_rb(t_lists **lists)
 		return ;
 	tmp = ft_last_lists(lists[1]);
 	tmp->next = lists[1];
-	lists[0] = lists[1]->next; 
+	lists[1] = lists[1]->next; 
 	tmp = tmp->next;
 	tmp->next = NULL;
 	ft_printf("rb\n");

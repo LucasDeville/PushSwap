@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:37:42 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/27 19:02:10 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/01 16:46:38 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_infos
 int ft_check_duplicate(char **str);
 t_lists *ft_last_lists(t_lists *lists);
 void    ft_free_lists(t_lists **lists);
-void    ft_algo(int nb, t_lists **lists);
+void    ft_algo(t_lists **lists);
 int ft_min(t_lists *lists);
 int ft_max(t_lists *lists);
 void    ft_sort_3(t_lists **lists);
@@ -57,9 +57,12 @@ int ft_argv_size(char **str);
 int ft_check_max(char **str, int min);
 void    ft_push_this(t_lists **lists, t_infos *infos);
 void    ft_order_b(t_lists *lists);
-void    ft_get_elt_at(t_list *list, int i);
+t_lists*    ft_get_elt_at(t_lists *list, int i);
 int     ft_get_idx(t_lists *lists, t_lists *elt);
 int ft_max_idx(int a, int b);
+int ft_get_final_idx(t_lists *lists, t_lists *elt);
+void	ft_back_b(t_lists **lists);
+
 
 void    ft_sa(t_lists **lists);
 void    ft_sb(t_lists **lists);

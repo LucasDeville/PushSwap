@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:15:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/27 17:37:13 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:46:17 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,17 +85,7 @@ int	main(int argc, char **argv)
 	}
 	printf("\n");
 	//------------//
-/*
-	ft_sa(lists);
-	ft_pb(lists);
-	ft_pb(lists);
-	ft_pb(lists);
-	ft_sa(lists);
-	ft_pa(lists);
-	ft_pa(lists);
-	ft_pa(lists);
-*/
-	//ft_algo((argc - 1), lists);
+	ft_algo(lists);
 	//------------//
 	printf("\n");
 	tmp = lists[0];

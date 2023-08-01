@@ -6,19 +6,19 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:42:08 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/27 17:51:23 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/07/31 11:34:52 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
 
-void    ft_get_elt_at(t_list *list, int i)
+t_lists    *ft_get_elt_at(t_lists *list, int i)
 {
     t_lists *tmp;
 
     tmp = list;
     while (--i)
-        tmp->next;
+        tmp = tmp->next;
     return (tmp);
 }
 
