@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:15:03 by ldeville          #+#    #+#             */
-/*   Updated: 2023/08/01 14:46:17 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/02 14:09:28 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,18 @@ int	main(int argc, char **argv)
 		lists[0] = ft_create_chain(argc - 1, argv, 1);
 	
 	//------------------------------------------------//
-	t_lists *tmp;
+	/*t_lists *tmp;
 	tmp = lists[0];
 	while (tmp)
 	{
 		printf("%i\n", tmp->nb);
 		tmp = tmp->next;
 	}
-	printf("\n");
+	printf("\n");*/
 	//------------//
 	ft_algo(lists);
 	//------------//
-	printf("\n");
+	/*printf("\n");
 	tmp = lists[0];
 	printf("-A-\n");
 	while (tmp)
@@ -101,7 +101,7 @@ int	main(int argc, char **argv)
 	{
 		printf("%i\n", tmp->nb);
 		tmp = tmp->next;
-	}
+	}*/
 	//------------------------------------------------//
 
 	if (argc == 2)

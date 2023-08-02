@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:37:42 by ldeville          #+#    #+#             */
-/*   Updated: 2023/08/01 16:46:38 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:57:44 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int     ft_get_idx(t_lists *lists, t_lists *elt);
 int ft_max_idx(int a, int b);
 int ft_get_final_idx(t_lists *lists, t_lists *elt);
 void	ft_back_b(t_lists **lists);
+int ft_get_inx_int(t_lists **lists, int i);
 
 
 void    ft_sa(t_lists **lists);

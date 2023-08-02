@@ -6,11 +6,25 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 14:32:29 by ldeville          #+#    #+#             */
-/*   Updated: 2023/08/01 17:39:12 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/02 12:00:12 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
+
+int ft_get_inx_int(t_lists **lists, int i)
+{
+    t_lists *tmp;
+
+    tmp = lists[1];
+    i = 0;
+    while (tmp)
+    {
+        tmp = tmp->next;
+        i++;
+    }    
+    return (i);
+}
 
 int ft_get_final_idx(t_lists *lists, t_lists *elt)
 {
