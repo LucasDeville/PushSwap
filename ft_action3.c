@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:58:40 by ldeville          #+#    #+#             */
-/*   Updated: 2023/07/04 15:32:48 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:35:31 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_rrr(t_lists **lists)
 	tmp = ft_last_lists(lists[0]);
 	tmp->next = lists[0];
 	lists[0] = tmp;
-	while(tmp->next != lists[0])
+	while (tmp->next != lists[0])
 		tmp = tmp->next;
 	tmp->next = NULL;
 	if (!lists[1] || !lists[1]->next)
@@ -29,7 +29,7 @@ void	ft_rrr(t_lists **lists)
 	tmp = ft_last_lists(lists[1]);
 	tmp->next = lists[1];
 	lists[1] = tmp;
-	while(tmp->next != lists[1])
+	while (tmp->next != lists[1])
 		tmp = tmp->next;
 	tmp->next = NULL;
 	ft_printf("rrr\n");
