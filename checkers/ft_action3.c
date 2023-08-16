@@ -1,49 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_action3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 19:15:47 by ldeville          #+#    #+#             */
-/*   Updated: 2023/08/10 11:43:23 by ldeville         ###   ########.fr       */
+/*   Created: 2023/04/03 15:58:40 by ldeville          #+#    #+#             */
+/*   Updated: 2023/08/15 16:17:30 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_pushswap.h"
+#include "checker.h"
 
-int	ft_min(t_lists *lists)
+void	ft_rrr(t_lists **lists)
 {
 	t_lists	*tmp;
-	int		nb;
 
-	tmp = lists;
-	nb = tmp->nb;
-	tmp = tmp->next;
-	while (tmp)
-	{
-		if (tmp->nb < nb)
-			nb = tmp->nb;
+	if (!lists[0] || !lists[0]->next)
+		return ;
+	tmp = ft_last_lists(lists[0]);
+	tmp->next = lists[0];
+	lists[0] = tmp;
+	while (tmp->next != lists[0])
 		tmp = tmp->next;
-	}
-	return (nb);
-}
-
-int	ft_max(t_lists *lists)
-{
-	t_lists	*tmp;
-	int		nb;
-
-	tmp = lists;
-	nb = tmp->nb;
-	tmp = tmp->next;
-	while (tmp)
-	{
-		if (tmp->nb > nb)
-			nb = tmp->nb;
+	tmp->next = NULL;
+	if (!lists[1] || !lists[1]->next)
+		return ;
+	tmp = ft_last_lists(lists[1]);
+	tmp->next = lists[1];
+	lists[1] = tmp;
+	while (tmp->next != lists[1])
 		tmp = tmp->next;
-	}
-	return (nb);
+	tmp->next = NULL;
 }
 
 void	ft_free_lists(t_lists **lists)
@@ -65,29 +53,20 @@ void	ft_free_lists(t_lists **lists)
 	free(lists);
 }
 
-t_lists	*ft_last_lists(t_lists *lists)
+int	ft_is_sorted(t_lists **lists)
 {
-	while (lists->next)
-		lists = lists->next;
-	return (lists);
-}
+	int		value;
+	t_lists	*tmp;
 
-int	ft_check_duplicate(char **str, int a)
-{
-	int	i;
-	int	y;
-
-	i = a;
-	while (str[i])
+	if (lists[1] || !lists[0])
+		return (0);
+	tmp = lists[0];
+	while (tmp)
 	{
-		y = 1;
-		while (str[y])
-		{
-			if (i != y && (ft_atoi(str[i]) == ft_atoi(str[y])))
-				return (-1);
-			y++;
-		}
-		i++;
+		value = tmp->nb;
+		tmp = tmp->next;
+		if (tmp && value > tmp->nb)
+			return (0);
 	}
-	return (0);
+	return (1);
 }

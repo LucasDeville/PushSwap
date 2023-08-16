@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:37:42 by ldeville          #+#    #+#             */
-/*   Updated: 2023/08/02 19:03:20 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/15 15:47:57 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_infos
 	int		size_divided;
 }	t_infos;
 
-int		ft_check_duplicate(char **str);
+int		ft_check_duplicate(char **str, int a);
 t_lists	*ft_last_lists(t_lists *lists);
 void	ft_free_lists(t_lists **lists);
 void	ft_algo(t_lists **lists);

@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 19:12:55 by ldeville          #+#    #+#             */
-/*   Updated: 2023/08/02 19:14:58 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/09 11:50:30 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ int	ft_check_max(char **str, int min)
 			if ((str[i][0] == '-' && str[i][y] >= INT_MIN[y]) ||
 			(str[i][0] != '-' && str[i][y] >= INT_MAX[y]))
 				y++;
-			else 
+			else
 				break ;
 		}
-		if ((str[i][0] == '-' && !INT_MIN[y]) 
-				|| (str[i][0] != '-' && !INT_MAX[y]))
+		if ((str[i][0] == '-' && (!INT_MIN[y] || ft_strlen(str[i]) > 11)) 
+				|| (str[i][0] != '-' && (!INT_MAX[y] 
+				|| ft_strlen(str[i]) > 10)))
 			return (-1);
 		i++;
 	}

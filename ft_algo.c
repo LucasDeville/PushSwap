@@ -6,7 +6,7 @@
 /*   By: ldeville <ldeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 10:09:25 by ldeville          #+#    #+#             */
-/*   Updated: 2023/08/02 19:07:27 by ldeville         ###   ########.fr       */
+/*   Updated: 2023/08/09 18:29:21 by ldeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,9 @@ void	ft_first_side(t_lists **lists, t_infos *infos)
 
 void	ft_algo(t_lists **lists)
 {
-	if (ft_size(lists[0]) <= 3)
+	if (ft_is_sorted(lists[0]))
+		return ;
+	else if (ft_size(lists[0]) <= 3)
 		ft_sort_3(lists);
 	else
 		ft_sort(lists);
