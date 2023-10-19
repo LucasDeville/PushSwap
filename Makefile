@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 CC = cc
-PRINTF_PATH = ft_printff/
+PRINTF_PATH = ft_printf/
 LIB = -L${PRINTF_PATH} -lftprintf
 PRINTF = ft_printf/libftprintf.a
 CFLAGS = -Wall -Wextra -Werror
